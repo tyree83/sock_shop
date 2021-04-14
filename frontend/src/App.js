@@ -17,13 +17,19 @@ import UserEditScreen from './screens/UserEditScreen';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
+import AboutUsScreen from './screens/AboutUsScreen';
+import StoreScreen from './screens/StoreScreen';
+import QuoteScreen from './screens/QuoteScreen';
 
 const App = () => {
   return (
     <Router>
       <Header />
-      <main className='py-3'>
+      <main>
         <Container>
+          <Route path='/quote' component={QuoteScreen} />
+          <Route path='/store' component={StoreScreen} />
+          <Route path='/aboutus' component={AboutUsScreen} />
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />

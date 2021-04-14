@@ -20,15 +20,35 @@ const Header = () => {
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>Sherry's Socks</Navbar.Brand>
+            <Navbar.Brand>Wright Moving Company</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav className='ml-auto'>
+              <LinkContainer to='/'>
+                <Nav.Link>
+                  <i className='fas fa-home'></i> Home
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/store'>
+                <Nav.Link>
+                  <i className='fas fa-couch'></i> Store
+                </Nav.Link>
+              </LinkContainer>
               <LinkContainer to='/cart'>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i> Cart
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/quote'>
+                <Nav.Link>
+                  <i className='fas fa-truck-moving'></i> Get a Quote
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/aboutus'>
+                <Nav.Link>
+                  <i className='fas fa-heart'></i> About Us
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (

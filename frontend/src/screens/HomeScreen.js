@@ -1,49 +1,56 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col } from 'react-bootstrap';
-import Product from '../components/Product';
-import Message from '../components/Message';
-import Loader from '../components/Loader';
-import Paginate from '../components/Paginate';
-import { listProducts } from '../actions/productActions';
+import { Container, Row, Col, Image, Carousel } from 'react-bootstrap';
 
-const HomeScreen = ({ match }) => {
-  const keyword = match.params.keyword;
-
-  const pageNumber = match.params.pageNumber || 1;
-
-  const dispatch = useDispatch();
-
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products, page, pages } = productList;
-
-  useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber));
-  }, [dispatch, keyword, pageNumber]);
-
+const HomeScreen = () => {
   return (
     <>
-      <h1>Latest Products</h1>
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        <Message variant='danger'>{error}</Message>
-      ) : (
-        <>
-          <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                <Product product={product} />
-              </Col>
-            ))}
-          </Row>
-          <Paginate
-            pages={pages}
-            page={page}
-            keyword={keyword ? keyword : ''}
-          />
-        </>
-      )}
+      <Col>
+        <Row className='justify-content-center'>
+          <h1 className='display-4'>Welcome to Wright Moving Company</h1>
+        </Row>
+        <Row className='justify-content-center'>
+          <Image src='../images/carousel/c1.jpg' alt='First slide' rounded />
+          <h2 className='font-weight-light'>
+            Let the experienced moving professionals at Wright Moving Company
+            take care of you on your moving day. We know how stressful moving
+            can be no matter how big or small the job. That's why we take pride
+            in providing organized, trustworthy, and reliable service. We love
+            what we do!
+          </h2>
+        </Row>
+      </Col>
+      <Col>
+        <Row className='justify-content-center'>
+          <h1>Customer Reviews</h1>
+        </Row>
+
+        <Carousel>
+          <Carousel.Item>
+            <Image
+              src='../images/carousel/yelp1.jpg'
+              alt='First slide'
+              rounded
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Image
+              src='../images/carousel/yelp2.jpg'
+              alt='Second slide'
+              rounded
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Image
+              src='../images/carousel/yelp3.jpg'
+              alt='Third slide'
+              rounded
+            />
+          </Carousel.Item>
+        </Carousel>
+      </Col>
+
+      <Row>
+        <Col></Col>
+      </Row>
     </>
   );
 };

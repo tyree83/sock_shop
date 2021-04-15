@@ -1,4 +1,4 @@
-import { Container, Row, Col, Image, Carousel } from 'react-bootstrap';
+import { Row, Col, Image, Carousel } from 'react-bootstrap';
 
 const HomeScreen = () => {
   return (

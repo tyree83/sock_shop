@@ -17,10 +17,19 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
-        <Container>
+      <Navbar bg='dark' variant='dark' expand='xl' collapseOnSelect>
+        <Container fluid>
           <LinkContainer to='/'>
-            <Navbar.Brand>Wright Moving Company</Navbar.Brand>
+            <Navbar.Brand>
+              <img
+                src='../logo.png'
+                alt=''
+                width='100'
+                height='75'
+                className='d-inline-block'
+              />
+              Wright Moving Company
+            </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>

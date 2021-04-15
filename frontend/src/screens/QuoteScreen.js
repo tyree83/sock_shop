@@ -1,4 +1,4 @@
-import { Form, Button, Col, Container } from 'react-bootstrap';
+import { Form, Button, Col } from 'react-bootstrap';
 import FormContainer from '../components/FormContainer';
 
 const QuoteScreen = ({ history }) => {
